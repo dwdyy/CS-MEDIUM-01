@@ -25,8 +25,9 @@ void reverse(Bigint *a){
     }
 }
 void print(Bigint *b){
-    if(b->less0) printf("-");
+    if(b->less0 && b->size!=0) printf("-");
     for(int i=b->size-1;i>=0;i--) printf("%c",b->num[i]);
+    if(b->size==0) printf("0");
 }
 Bigint inv(Bigint a){ // 取负号
     a.less0 ^=1;
